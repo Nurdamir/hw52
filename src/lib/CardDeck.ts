@@ -8,9 +8,9 @@ class CardDeck {
     public rank: string[] = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
   ) {
 
-    for (let i = 0; i < rank.length; i++) {
-      for (let j = 0; j < suit.length; j++) {
-        this.arrayCards.push(new Card(rank[i], suit[j]));
+    for (let i = 0; i < suit.length; i++) {
+      for (let j = 0; j < rank.length; j++) {
+        this.arrayCards.push(new Card(suit[i], rank[j]));
       }
     }
   }
