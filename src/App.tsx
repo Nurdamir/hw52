@@ -16,7 +16,7 @@ function App() {
 
   let cardDeck = new CardDeck();
 
-  cardDeck.getCard();
+  console.log(cardDeck.getCards(5));
 
   if (cards.length === 0) {
     return (
