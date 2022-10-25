@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import CardView from "./components/CardView/CardView"
+import Card from "./lib/Card";
+import CardDeck from "./lib/CardDeck";
+
+
+
+
 
 function App() {
+  const [cards, setCards] = useState<Card[]>([]);
+
+
+  const button = <button onClick={() => setCards([new Card('diams', '2')])}>Cards</button>
+
+  let cardDeck = new CardDeck();
+
+  cardDeck.getCard();
+
+  if (cards.length === 0) {
+    return (
+      <div>
+        Array is empty!
+        {button}
+      </div>
+    )
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {button}
+      <CardView rank={'A'} suit={'♠'}/>
     </div>
   );
 }
