@@ -20,10 +20,7 @@ class CardDeck {
     const card: Card = this.arrayCards[rand];
     this.arrayCards.splice(rand, 1);
     return card;
-
-
   }
-
 
   getCards(howMany: number): Card[] {
     const arrCards = [];
@@ -32,7 +29,6 @@ class CardDeck {
     }
     return arrCards;
   }
-
 
 }
 
